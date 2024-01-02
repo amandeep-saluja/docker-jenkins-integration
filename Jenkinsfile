@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'docker-hub-credential', variable: 'docker-hub-password')]) {
-                        sh 'docker login -u jacksparrow2023 -p ${docker-hub-password}'
+                        sh 'docker login -u jacksparrow2023 -p ${dockerhub}'
                     }
                     sh 'docker push jacksparrow2023/docker-jenkins-integration'
                 }
